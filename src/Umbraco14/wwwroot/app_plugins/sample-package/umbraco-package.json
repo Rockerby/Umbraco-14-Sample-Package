@@ -1,0 +1,50 @@
+{
+    "$schema": "./umbraco-package-schema.json",
+    "id": "sample.umbraco.package",
+    "name": "sample.umbraco.package",
+    "allowPackageTelemetry": true,
+    "version": "0.0.0",
+    "extensions": [
+        {
+            "alias": "myCustomSection",
+            "name": "My Custom Section",
+            "type": "section",
+            "meta": {
+                "label": "Sample Package",
+                "pathname": "samplepackage"
+            }
+        },
+        {
+            "alias": "myCustomSectionView",
+            "name": "My Custom Section View",
+            "weight": 0,
+            "type": "sectionView",
+            "elementName": "basic-section",
+            "js": "/app_plugins/sample-package/basic-section.js",
+            "meta": {
+                "label": "Sample Package",
+                "pathname": "samplepackage",
+                "icon": "icon-umb-contour"
+            },
+            "conditions": [
+                {
+                    "alias": "Umb.Condition.SectionAlias",
+                    "match": "myCustomSection"
+                }
+            ]
+        },
+        {
+            "type": "propertyEditorUi",
+            "alias": "my.text.TextBoxCustom",
+            "name": "I AM RICHARD",
+            "element": "/app_plugins/sample-package/property-editor/custom-textbox.js",
+            "elementName": "my-text-box",
+            "meta": {
+                "label": "RICHARD I AM",
+                "propertyEditorSchemaAlias": "Umbraco.TextBox",
+                "icon": "icon-autofill",
+                "group": "common"
+            }
+        }
+    ]
+}
