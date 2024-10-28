@@ -1,6 +1,3 @@
-console.log("naoisdoij")
-    ;
-
 import { LitElement, html, css, customElement, property } from '@umbraco-cms/backoffice/external/lit';
 import { UmbElementMixin } from '@umbraco-cms/backoffice/element-api';
 import { UmbPropertyValueChangeEvent } from '@umbraco-cms/backoffice/property-editor';
